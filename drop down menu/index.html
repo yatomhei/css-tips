@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Navigation Bar</title>
+    <style media="screen">
+        * {
+            box-sizing: border-box;
+        }
+
+        nav ul li {
+            list-style-type: none;
+            background-color: #58ADE3;
+            color: white;
+            margin: 0;
+            padding: 3px 5px;
+            border: 1px solid #fff;
+        }
+
+        nav>ul>li {
+            display: inline-block;
+            position: relative;
+            min-width: 120px;
+            /* border-width: 0 1px; */
+        }
+
+        nav ul ul {
+            /* scales the sub-menus down to 0 on the y axes => not shown */
+            transform: scale(1, 0);
+            /* will make the sub-menu drop down from the top */
+            transform-origin: top center;
+            /* we use 50ms delay so if the user moves the mouse over a link real quickly it will not open up the sub-menu  */
+            transition: transform 0.2s ease-in 50ms;
+            /* places the sub-menus right under their parent menu item */
+            position: absolute;
+            top: 100%;
+            left: -41px;
+            min-width: 100%;
+        }
+
+        nav li:hover ul {
+            /* this will make the sub-menu appear (the scale on the y-axe changes from 0 to 1) */
+            transform: scale(1, 1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>About
+                    <ul>
+                        <li>Me</li>
+                        <li>You</li>
+                        <li>Them</li>
+                        <li>Nobody</li>
+                    </ul>
+                </li>
+                <li>Posts
+                    <ul>
+                        <li>Door post</li>
+                        <li>Wall hanging</li>
+                        <li>Stair banister</li>
+                        <li>Jerusalem</li>
+                    </ul>
+                </li>
+                <li>Topics
+                    <ul>
+                        <li>CSS3</li>
+                        <li>html5</li>
+                        <li>Javascript</li>
+                        <li>Java</li>
+                    </ul>
+                </li>
+                <li>Events
+                    <ul>
+                        <li>Party</li>
+                        <li>Dinner</li>
+                        <li>Hike</li>
+                        <li>Run Camp</li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</body>
+
+</html>
